@@ -1,7 +1,8 @@
 solid   = require 'solid'
 sio     = require 'socket.io'
 {read}  = require('node_util').sync()
-{log}   = require 'util'
+{log, inspect}   = require 'util'
+dir = inspect
 
 # Configuration
 # =============
@@ -19,9 +20,18 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     io.configure () ->
       io.set 'transports', ['websocket']
       io.disable 'log'
+      
     io.sockets.on 'connection', (socket) ->
-        log 'New connection!'
         
+        socket.on 'id', (msg) -> socket.set 'info', msg
+        
+        socket.on 'frisbee', (data) ->
+            for client in io.sockets.clients()
+                # TODO: Catch error here, which happens when the messages are too fast?
+                {lat, lng, name} = client.store.data.info
+                log "Sending to #{name}..."
+                client.emit 'frisbee'
+    
     app.get "/", @render (req) ->
       @doctype 5
       @html ->
@@ -32,7 +42,8 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
           @js 'client.js'
           @css '/static/css/home.css'
         @body ->
-            @div -> 'Frisbee'
+            @div '#logo', -> 'Frisbee'
+            @input {id: 'frisbee-button', type: 'button', value: 'frisbee'}
             
     app.post "/new", @render (req) ->
         # req.params.id

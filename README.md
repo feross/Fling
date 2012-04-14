@@ -5,8 +5,8 @@ To get the server running,
 
 ```coffee
 npm install
-coffee server.coffee
-open http://localhost:9001
+coffee src/server.coffee
+open http://localhost:5000
 ```
 
 
