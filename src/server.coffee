@@ -26,13 +26,13 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
       @doctype 5
       @html ->
         @head ->
-          @title 'Fling'
+          @title 'Frisbee'
           @js '/jquery.js'
           @js '/socket.io/socket.io.js'
           @js 'client.js'
           @css '/static/css/home.css'
         @body ->
-            @div -> 'Fling'
+            @div -> 'Frisbee'
             
     app.post "/new", @render (req) ->
         # req.params.id
