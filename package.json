@@ -1,0 +1,20 @@
+{
+  "name": "Frisbee",
+  "version": "0.1.0",
+  "private" : "true",
+  "author" : "Abi Raja <abimanyuraja@gmail.com>",
+  "description": "Fling your photos/music around",
+  "dependencies": {
+      "underscore" : "*",
+      "underscore.string" : "*",
+      "node_util" : "*",
+      "solid" : "*",
+      "socket.io" : ">0.8.x"
+  },
+  "devDependencies": {
+    "coffee-script": "1.1.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
