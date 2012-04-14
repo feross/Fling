@@ -19,13 +19,16 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     io = sio.listen app.app
     io.configure () ->
       io.set 'transports', ['websocket']
-      io.disable 'log'
+      io.enable 'log'
       
     io.sockets.on 'connection', (socket) ->
-        
-        socket.on 'id', (msg) -> socket.set 'info', msg
+        log 'new connection'
+        socket.on 'id', (msg) ->
+            log 'hiasad'
+            socket.set 'info', msg
         
         socket.on 'frisbee', (data) ->
+            log 'new frisbee'
             for client in io.sockets.clients()
                 # TODO: Catch error here, which happens when the messages are too fast?
                 {lat, lng, name} = client.store.data.info
