@@ -28,7 +28,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     io = sio.listen app.app
     io.configure () ->
       io.set 'transports', ['websocket']
-      io.enable 'log'
+      io.disable 'log'
       
     io.sockets.on 'connection', (socket) ->
                 
@@ -39,7 +39,21 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 log(inspect(info))
         
         socket.on 'frisbee', (data, cb) ->
-            log 'frisbee!!!'
+
+            url = data.url
+            
+            YOUTUBE_URL = ///^https?://.*?youtube\.com/watch.*?v=([^&]*)///g
+            result = YOUTUBE_URL.exec url
+            if result
+                log 'youtube'
+                log result[1]
+                obj =
+                    type: 'youtube'
+                    content: result[1]
+            else
+                obj =
+                    type: 'url'
+                    content: url
 
             for client in io.sockets.clients()
                 
@@ -49,7 +63,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
 
                 log "Sending to #{name}..."
                                 
-                client.emit 'frisbee', data
+                client.emit 'frisbee', obj
 
                 cb()
                 
@@ -73,7 +87,6 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 @css '/static/css/home.css'
             @body ->
                 @div '#fixed'
-                @input {id: 'frisbee-button', type: 'button', value: 'frisbee'}
             
     app.post "/new", @render (req) ->
         # req.params.id

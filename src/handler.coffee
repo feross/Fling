@@ -14,8 +14,7 @@ window.onShake = ->
     window.socket.emit 'frisbee', {
         lat: window.foundPosition.coords.latitude,
         lng: window.foundPosition.coords.longitude,
-        type: 'url',
-        content: url
+        url: url
     }, ->
         history.go -1
 

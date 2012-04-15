@@ -5,6 +5,9 @@ window.socket = socket = io.connect SERVER
 percentOfHeight = (percent) -> $(window).height() * (percent / 100)
 percentOfWidth = (percent) -> $(window).width() * (percent / 100)
 
+playWhoosh = ->
+  $('body').append '<audio preload="auto" autoplay><source src="/static/sound/whoosh.mp3" /><source src="/static/sound/whoosh.ogg" /></audio>'
+
 $(document).ready ->
     $('#frisbee-button').click ->
         socket.emit 'frisbee', {lat: 5, lng: 5}
@@ -19,26 +22,28 @@ $(document).ready ->
 socket.on 'frisbee', (data) ->
     console.log data
     {type, content} = data
+    console.log data
 
     throwFrisbee ->
         switch type
             when "url"
-                iframe = $("<iframe src='#{content}'></iframe>")
-                iframe.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
-                iframe.hide()
-                iframe.appendTo('.content')
-                iframe.fadeIn('slow')
+                a = $("<iframe src='#{content}'></iframe>")
+                a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
             when "youtube"
-                
-                $("body").append $("""<iframe width='420' height='315'
-                                      src='http://www.youtube.com/embed/#{content}'
-                                      frameborder='0' autoplay=true allowfullscreen></iframe>""")
+                a = $("<iframe src='http://www.youtube.com/embed/#{content}?autoplay=1' frameborder='0' autoplay=true allowfullscreen></iframe>")
+                a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
+
             when "image"
                 $("body").append $("<img src='#{content}'></img>")
             when "spotify"
                 document.location = "spotify:track:#{content}"
             else
                 alert("Unknown")
+                return
+        a.hide()
+        a.appendTo('.content')
+        a.fadeIn('slow')
+
 
 
 throwFrisbee = window.throwFrisbee = (cb) ->
@@ -52,6 +57,8 @@ throwFrisbee = window.throwFrisbee = (cb) ->
 
     animateFrisbee = ->
         oldFrisbee.remove()
+
+        playWhoosh()
 
         frisbee = $ '<div>', class: 'frisbee frisbeeContent'
         frisbee.css left: 145, bottom: 137, width: 50, height: 29
