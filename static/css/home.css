@@ -287,10 +287,20 @@ html {
     z-index: 3;
 }
 
-.frisbee {
-    /*background: url(/static/img/frisbee-logo.png) top left no-repeat;*/
+.swoosh {
     z-index: 2;
 }
+
+/* Frisbee */
+
+.frisbee {
+    z-index: 3;
+}
+
+.frisbeeContent {
+
+}
+
 
 /* Icons */
 
@@ -298,13 +308,6 @@ html {
     background: url(/static/img/music.png) top left no-repeat;
     width: 44px;
     height: 51px;
-}
-
-.swoosh {
-    z-index: 1;
-/*    background: url(/static/img/swoosh.png) top left no-repeat;
-    width: 621px;
-    height: 313px;*/
 }
 
 .video {
