@@ -1,7 +1,13 @@
+net = require 'net'
+{log, inspect}   = require 'util'
 solid   = require 'solid'
 sio     = require 'socket.io'
 {read}  = require('node_util').sync()
-{log, inspect}   = require 'util'
+
+
+# Aliases
+# =======
+
 dir = inspect
 
 # Configuration
@@ -10,6 +16,7 @@ dir = inspect
 LOCAL = off
 PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
+TCP_PORT = 5002
 
 # App
 # ===
@@ -78,3 +85,28 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     # 
     #   app.get "/:id/requests", (req) ->
     #     "<p>#{req.params.id}: you have no requests.</p>"
+
+
+# TCP server that the Mac app polls to find out if it has received any messages
+# We have to kill dead connections, etc.
+
+dummy = 0
+
+# TCP Text Protocol
+# poll -> empty | w:[url] | m:[song] 
+net.createServer( (socket) ->
+    msg = ""
+    socket.on 'data', (data) ->
+        msg += data.toString 'ascii'
+        console.log msg
+        if msg is 'poll' and dummy is 0
+            dummy = 1
+            socket.write 'frisbee'
+        else
+            socket.write 'empty'
+        
+    socket.on 'end', () ->
+        
+).listen TCP_PORT
+
+log "Running TCP server on #{TCP_PORT}"

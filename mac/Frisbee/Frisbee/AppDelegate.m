@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreFoundation/CoreFoundation.h>
+#import <sys/socket.h>
+#include <netinet/in.h>
+
+#define SERVER_IP "127.0.0.1"
 
 @implementation AppDelegate
 
@@ -15,6 +20,46 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self createStatusItem];
+    
+    // Poll the server constantly (this should be on a seperate thread, but the UI thread
+    struct sockaddr_in addr;
+    int sockfd;
+    
+    while(true){
+        // Create a socket
+        sockfd = socket( AF_INET, SOCK_STREAM, 0 );
+        addr.sin_family = AF_INET;
+        addr.sin_addr.s_addr = inet_addr(SERVER_IP);
+        addr.sin_port = htons( 5002 );
+        
+        int conn = connect(sockfd, &addr, sizeof(addr)); 
+        
+        if (!conn) {
+            NSString *msg = @"poll";
+            NSData* data = [msg dataUsingEncoding:NSUTF8StringEncoding];
+            ssize_t datasend = send(sockfd, [data bytes], [data length], 0);
+            
+            char buf[100];
+            memset(buf, 0, sizeof(buf));
+            
+            int numbytes = recv(sockfd, buf, sizeof(buf)-1, 0); 
+            buf[numbytes] = '\0';
+           
+            NSString *cmd = [NSString stringWithUTF8String: buf];
+            NSLog(cmd);
+            if([cmd isEqualToString:@"frisbee"]){
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.google.com/"]];
+            }
+            
+            close(sockfd);
+        }else{
+            NSLog(@"Did not connect");
+        }
+        // Sleep for 0.1 seconds
+        usleep(100000);
+    }
+
+    
 }
 
 
