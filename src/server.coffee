@@ -32,13 +32,28 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
       
     io.sockets.on 'connection', (socket) ->
                 
+        log 'new connection!'
         socket.on 'id', (msg) ->
             socket.set('info', msg)
             socket.get 'info', (err, info) ->
                 log(inspect(info))
         
-        socket.on 'frisbee', (data) ->
-            log 'frisbee!!!'
+        socket.on 'frisbee', (data, cb) ->
+
+            url = data.url
+            
+            YOUTUBE_URL = ///^https?://.*?youtube\.com/watch.*?v=([^&]*)///g
+            result = YOUTUBE_URL.exec url
+            if result
+                log 'youtube'
+                log result[1]
+                obj =
+                    type: 'youtube'
+                    content: result[1]
+            else
+                obj =
+                    type: 'url'
+                    content: url
 
             for client in io.sockets.clients()
                 
@@ -48,7 +63,10 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
 
                 log "Sending to #{name}..."
                                 
-                client.emit 'frisbee', data
+                client.emit 'frisbee', obj
+
+                cb()
+                
                 # Messages for different kinds of content
                 # TODO: Convert music to a spotify thing
                 # {type: 'spotify', content: '7My5AMVGC5KUYgsxZVOQUI'}
@@ -69,7 +87,6 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 @css '/static/css/home.css'
             @body ->
                 @div '#fixed'
-                @input {id: 'frisbee-button', type: 'button', value: 'frisbee'}
             
     app.post "/new", @render (req) ->
         # req.params.id
