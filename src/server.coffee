@@ -7,7 +7,7 @@ dir = inspect
 # Configuration
 # =============
 
-LOCAL = on
+LOCAL = off
 PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
 
@@ -31,11 +31,13 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
         
         socket.on 'frisbee', (data) ->
             log 'frisbee!!!'
+
             for client in io.sockets.clients()
                 
                 # TODO: Catch error here, which happens when the messages are too fast?
                 # while client.store.data.info isnt undefined
-                {lat, lng, name} = client.store.data.info
+                {lat, lng, name} = {5,5, 'test'} # client.store.data.info
+
                 log "Sending to #{name}..."
                 
                 # TODO: Convert music to a spotify thing
@@ -52,6 +54,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
         @head ->
           @title 'Frisbee'
           @js '/jquery.js'
+          @script "var window.LOCAL = #{LOCAL}"
           @js '/socket.io/socket.io.js'
           @js 'client.js'
           @css '/static/css/home.css'
@@ -66,6 +69,8 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     app.get "/home", "/"           # URL rewriting/redirects
     app.get "/jquery.js", @jquery  # Put <script src="/jquery.js"></script> in HTML
     app.get "/javascripts/client.js" , () -> type: 'text/javascript', body: read("#{__dirname}/../js/client.js")
+    app.get "/javascripts/bookmarklet.js", () -> type: 'text/javascript', body: read("#{__dirname}/../js/bookmarklet.js")
+    app.get "/javascripts/handler.js", () -> type: 'text/javascript', body: read("#{__dirname}/../js/handler.js")
     
     # app.namespace "/user", ->
     #   app.get "/:id", @render (req) ->
