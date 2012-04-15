@@ -7,12 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <MediaPlayer/MediaPlayer.h>
-#import <sys/socket.h>
-#include <netinet/in.h>
 
-#define SERVER_IP "10.30.35.27" 
-//CHANGE HERE
 
 @implementation AppDelegate
 
@@ -27,31 +22,7 @@
         splitViewController.delegate = (id)navigationController.topViewController;
     }
     
-    MPMediaItem * song = [[MPMusicPlayerController iPodMusicPlayer] nowPlayingItem];
-    NSString * title   = [song valueForProperty:MPMediaItemPropertyTitle];
-    NSString * album   = [song valueForProperty:MPMediaItemPropertyAlbumTitle];
-    NSString * artist  = [song valueForProperty:MPMediaItemPropertyArtist];
-    NSLog(title);
-    
-    struct sockaddr_in addr;
-    int sockfd;
-    
-    // Create a socket
-    sockfd = socket( AF_INET, SOCK_STREAM, 0 );
-    addr.sin_family = AF_INET;
-    addr.sin_addr.s_addr = inet_addr(SERVER_IP);
-    addr.sin_port = htons( 5003 );
-    
-    int conn = connect(sockfd, &addr, sizeof(addr)); 
-    
-    if (!conn) {
-        //NSString *msg = @"poll";
-        NSData* data = [title dataUsingEncoding:NSUTF8StringEncoding];
-        ssize_t datasend = send(sockfd, [data bytes], [data length], 0);
-        close(sockfd);
-    }else{
-        NSLog(@"Did not connect");
-    }
+
     
     return YES;
 }

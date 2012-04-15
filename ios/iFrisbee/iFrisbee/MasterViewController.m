@@ -7,8 +7,13 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <sys/socket.h>
+#include <netinet/in.h>
+
+#define SERVER_IP "10.32.138.66" 
+//CHANGE HERE
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -37,6 +42,57 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    NSLog(@"Motion ended");
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    NSLog(@"Motion began");
+    
+    MPMediaItem * song = [[MPMusicPlayerController iPodMusicPlayer] nowPlayingItem];
+    NSString * title   = [song valueForProperty:MPMediaItemPropertyTitle];
+    NSString * album   = [song valueForProperty:MPMediaItemPropertyAlbumTitle];
+    NSString * artist  = [song valueForProperty:MPMediaItemPropertyArtist];
+    NSString *time = [NSString stringWithFormat:@"%f", [[MPMusicPlayerController iPodMusicPlayer] currentPlaybackTime]];
+    
+    NSLog(time);
+    
+    struct sockaddr_in addr;
+    int sockfd;
+    
+    // Create a socket
+    sockfd = socket( AF_INET, SOCK_STREAM, 0 );
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr(SERVER_IP);
+    addr.sin_port = htons( 5003 );
+    
+    int conn = connect(sockfd, &addr, sizeof(addr)); 
+    
+    if (!conn) {
+        NSData* data = [[[[[title stringByAppendingString:@" - "] stringByAppendingString:artist] stringByAppendingString:@"|"] stringByAppendingString:time] dataUsingEncoding:NSUTF8StringEncoding];
+        ssize_t datasend = send(sockfd, [data bytes], [data length], 0);
+        close(sockfd);
+    }else{
+        NSLog(@"Did not connect");
+    }
+    
+    sleep(1);
+    [[MPMusicPlayerController iPodMusicPlayer] pause];
+    
 }
 
 - (void)viewDidUnload
