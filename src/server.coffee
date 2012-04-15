@@ -23,9 +23,8 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
       io.disable 'log'
       
     io.sockets.on 'connection', (socket) ->
-        
+                
         socket.on 'id', (msg) ->
-            log 'msg'
             socket.set('info', msg)
             socket.get 'info', (err, info) ->
                 log(inspect(info))

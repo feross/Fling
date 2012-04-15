@@ -3,6 +3,7 @@ SERVER = if LOCAL then "http://localhost" else "http://50.116.7.184"
 
 window.socket = socket = io.connect SERVER
 
+
 $(document).ready ->
     $('#frisbee-button').click ->
         socket.emit 'frisbee', {lat: 5, lng: 5}
