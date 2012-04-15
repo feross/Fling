@@ -32,12 +32,19 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
         socket.on 'frisbee', (data) ->
             log 'frisbee!!!'
             for client in io.sockets.clients()
-                # TODO: Catch error here, which happens when the messages are too fast?
                 
+                # TODO: Catch error here, which happens when the messages are too fast?
                 # while client.store.data.info isnt undefined
                 {lat, lng, name} = client.store.data.info
                 log "Sending to #{name}..."
-                client.emit 'frisbee', {type: 'youtube', content: '4qYwk37F0PQ'} # {type: 'url', content: 'http://reddit.com'}
+                
+                # TODO: Convert music to a spotify thing
+                
+                client.emit 'frisbee', {type: 'spotify', content: '7My5AMVGC5KUYgsxZVOQUI'}
+                # Messages for different kinds of content
+                # {type: 'image', content: 'http://i.imgur.com/RJlON.jpg'}
+                # {type: 'youtube', content: '4qYwk37F0PQ'}
+                # {type: 'url', content: 'http://reddit.com'}
     
     app.get "/", @render (req) ->
       @doctype 5
