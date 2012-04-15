@@ -7,7 +7,8 @@ dir = inspect
 # Configuration
 # =============
 
-PORT = 5000
+LOCAL = on
+PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
 
 # App
@@ -19,21 +20,24 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     io = sio.listen app.app
     io.configure () ->
       io.set 'transports', ['websocket']
-      io.enable 'log'
+      io.disable 'log'
       
     io.sockets.on 'connection', (socket) ->
-        log 'new connection'
+                
         socket.on 'id', (msg) ->
-            log 'hiasad'
-            socket.set 'info', msg
+            socket.set('info', msg)
+            socket.get 'info', (err, info) ->
+                log(inspect(info))
         
         socket.on 'frisbee', (data) ->
-            log 'new frisbee'
+            log 'frisbee!!!'
             for client in io.sockets.clients()
                 # TODO: Catch error here, which happens when the messages are too fast?
+                
+                # while client.store.data.info isnt undefined
                 {lat, lng, name} = client.store.data.info
                 log "Sending to #{name}..."
-                client.emit 'frisbee'
+                client.emit 'frisbee', {type: 'youtube', content: '4qYwk37F0PQ'} # {type: 'url', content: 'http://reddit.com'}
     
     app.get "/", @render (req) ->
       @doctype 5
