@@ -44,31 +44,32 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 
                 # TODO: Catch error here, which happens when the messages are too fast?
                 # while client.store.data.info isnt undefined
-                {lat, lng, name} = [5,5, 'test'] # client.store.data.info
+                [lat, lng, name] = [5,5, 'test'] # client.store.data.info
 
                 log "Sending to #{name}..."
-                
-                # TODO: Convert music to a spotify thing
-                
-                client.emit 'frisbee', {type: 'spotify', content: '7My5AMVGC5KUYgsxZVOQUI'}
+                                
+                client.emit 'frisbee', data
                 # Messages for different kinds of content
+                # TODO: Convert music to a spotify thing
+                # {type: 'spotify', content: '7My5AMVGC5KUYgsxZVOQUI'}
                 # {type: 'image', content: 'http://i.imgur.com/RJlON.jpg'}
                 # {type: 'youtube', content: '4qYwk37F0PQ'}
                 # {type: 'url', content: 'http://reddit.com'}
     
     app.get "/", @render (req) ->
-      @doctype 5
-      @html ->
-        @head ->
-          @title 'Frisbee'
-          @js '/jquery.js'
-          @script "window.LOCAL = #{LOCAL};"
-          @js '/socket.io/socket.io.js'
-          @js 'client.js'
-          @css '/static/css/home.css'
-        @body ->
-            @div '#logo', -> 'Frisbee'
-            @input {id: 'frisbee-button', type: 'button', value: 'frisbee'}
+        @doctype 5
+        @html ->
+            @head ->
+                @title 'Frisbee'
+                @js '/jquery.js'
+                @js '/static/js/libs/jquery-ui-1.8.18.custom.min.js'
+                @script "window.LOCAL = #{LOCAL};"
+                @js '/socket.io/socket.io.js'
+                @js 'client.js'
+                @css '/static/css/home.css'
+            @body ->
+                @div '#fixed'
+                @input {id: 'frisbee-button', type: 'button', value: 'frisbee'}
             
     app.post "/new", @render (req) ->
         # req.params.id

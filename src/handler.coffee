@@ -1,4 +1,4 @@
-LOCAL = false
+LOCAL = on
 SERVER = if LOCAL then "http://localhost" else "http://50.116.7.184"
 
 window.socket = socket = io.connect SERVER
@@ -21,7 +21,7 @@ success = (position) ->
         content: url
     }
 
-    # history.go -1
+    history.go -1
 
 error = (msg) ->
     alert 'Geolocation failed. Try again and ALLOW access! ' + msg
