@@ -1,4 +1,4 @@
-LOCAL = on
+LOCAL = off
 SERVER = if LOCAL then "http://localhost" else "http://50.116.7.184"
 
 window.socket = socket = io.connect SERVER
