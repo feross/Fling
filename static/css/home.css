@@ -277,14 +277,14 @@ html {
     background: url(/static/img/kid1.png) top left no-repeat;
     width: 100px;
     height: 130px;
-    z-index: 3;
+    z-index: 50;
 }
 
 .kid2 {
     background: url(/static/img/kid2.png) top left no-repeat;
     width: 78px;
     height: 136px;
-    z-index: 3;
+    z-index: 50;
 }
 
 .swoosh {
@@ -294,13 +294,29 @@ html {
 /* Frisbee */
 
 .frisbee {
-    z-index: 3;
+    z-index: 10;
 }
 
 .frisbeeContent {
-
+    background-image: url(/static/img/frisbee.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 100;
 }
 
+.content {
+    position: relative;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
 
 /* Icons */
 
