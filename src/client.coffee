@@ -1,4 +1,4 @@
-window.socket = socket = io.connect 'http://74.207.248.42'
+window.socket = socket = io.connect 'http://localhost'
 
 $(document).ready ->
     $('#frisbee-button').click ->
