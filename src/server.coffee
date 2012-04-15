@@ -31,11 +31,13 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
         
         socket.on 'frisbee', (data) ->
             log 'frisbee!!!'
+
             for client in io.sockets.clients()
                 
                 # TODO: Catch error here, which happens when the messages are too fast?
                 # while client.store.data.info isnt undefined
-                {lat, lng, name} = client.store.data.info
+                {lat, lng, name} = {5,5, 'test'} # client.store.data.info
+
                 log "Sending to #{name}..."
                 
                 # TODO: Convert music to a spotify thing
