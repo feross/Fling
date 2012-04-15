@@ -119,8 +119,10 @@ net.createServer( (socket) ->
     msg = ""
     socket.on 'data', (data) ->
         msg += data.toString 'ascii'
-        dummy = msg
+        [search, time] = msg.split('|')
+        dummy = "youtube=" + search.replace(/\s/g, ',') + "&time=" + Math.floor(time / 60) + "m" + Math.ceil(time % 60) + "s"
         console.log msg
+        console.log dummy
         
     socket.on 'end', () ->
         
