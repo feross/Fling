@@ -19,13 +19,14 @@ socket.on 'frisbee', (data) ->
     switch type
         when "url"
             $("body").append $("<iframe src='#{content}'></iframe>")
+            # window.open('')
         when "youtube"
             $("body").append $("""<iframe width='420' height='315'
                                   src='http://www.youtube.com/embed/#{content}'
                                   frameborder='0' autoplay=true allowfullscreen></iframe>""")
         when "image"
-        
+            $("body").append $("<img src='#{content}'></img>")
         when "spotify"
-        
+            document.location = "spotify:track:#{content}"
         else
             alert("Unknown")
