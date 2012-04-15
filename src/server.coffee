@@ -13,7 +13,7 @@ dir = inspect
 # Configuration
 # =============
 
-LOCAL = off
+LOCAL = on
 PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
 TCP_PORT = 5002
@@ -62,7 +62,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
         @head ->
           @title 'Frisbee'
           @js '/jquery.js'
-          @script "var window.LOCAL = #{LOCAL}"
+          @script "window.LOCAL = #{LOCAL};"
           @js '/socket.io/socket.io.js'
           @js 'client.js'
           @css '/static/css/home.css'
