@@ -44,7 +44,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 
                 # TODO: Catch error here, which happens when the messages are too fast?
                 # while client.store.data.info isnt undefined
-                {lat, lng, name} = {5,5, 'test'} # client.store.data.info
+                {lat, lng, name} = [5,5, 'test'] # client.store.data.info
 
                 log "Sending to #{name}..."
                 
