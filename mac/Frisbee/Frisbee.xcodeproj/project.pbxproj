@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0042AFE9153A5E51001DBD51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042AFE8153A5E51001DBD51 /* Cocoa.framework */; };
+		0042AFF3153A5E51001DBD51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0042AFF1153A5E51001DBD51 /* InfoPlist.strings */; };
+		0042AFF5153A5E51001DBD51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042AFF4153A5E51001DBD51 /* main.m */; };
+		0042AFF9153A5E51001DBD51 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0042AFF7153A5E51001DBD51 /* Credits.rtf */; };
+		0042AFFC153A5E51001DBD51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042AFFB153A5E51001DBD51 /* AppDelegate.m */; };
+		0042AFFF153A5E52001DBD51 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0042AFFD153A5E52001DBD51 /* MainMenu.xib */; };
+		0042B007153A5E52001DBD51 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B006153A5E52001DBD51 /* SenTestingKit.framework */; };
+		0042B008153A5E52001DBD51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042AFE8153A5E51001DBD51 /* Cocoa.framework */; };
+		0042B010153A5E52001DBD51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0042B00E153A5E52001DBD51 /* InfoPlist.strings */; };
+		0042B013153A5E52001DBD51 /* FrisbeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B012153A5E52001DBD51 /* FrisbeeTests.m */; };
+		0042B01E153A61AA001DBD51 /* growlTunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0042B01D153A61AA001DBD51 /* growlTunes.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0042B009153A5E52001DBD51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0042AFDB153A5E51001DBD51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0042AFE3153A5E51001DBD51;
+			remoteInfo = Frisbee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0042AFE4153A5E51001DBD51 /* Frisbee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frisbee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0042AFE8153A5E51001DBD51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0042AFEB153A5E51001DBD51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0042AFEC153A5E51001DBD51 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0042AFED153A5E51001DBD51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0042AFF0153A5E51001DBD51 /* Frisbee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Frisbee-Info.plist"; sourceTree = "<group>"; };
+		0042AFF2153A5E51001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0042AFF4153A5E51001DBD51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0042AFF6153A5E51001DBD51 /* Frisbee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frisbee-Prefix.pch"; sourceTree = "<group>"; };
+		0042AFF8153A5E51001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0042AFFA153A5E51001DBD51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0042AFFB153A5E51001DBD51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0042AFFE153A5E52001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0042B005153A5E52001DBD51 /* FrisbeeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrisbeeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0042B006153A5E52001DBD51 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0042B00D153A5E52001DBD51 /* FrisbeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrisbeeTests-Info.plist"; sourceTree = "<group>"; };
+		0042B00F153A5E52001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0042B011153A5E52001DBD51 /* FrisbeeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrisbeeTests.h; sourceTree = "<group>"; };
+		0042B012153A5E52001DBD51 /* FrisbeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrisbeeTests.m; sourceTree = "<group>"; };
+		0042B01D153A61AA001DBD51 /* growlTunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growlTunes.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0042AFE1153A5E51001DBD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042AFE9153A5E51001DBD51 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B001153A5E52001DBD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B007153A5E52001DBD51 /* SenTestingKit.framework in Frameworks */,
+				0042B008153A5E52001DBD51 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0042AFD9153A5E51001DBD51 = {
+			isa = PBXGroup;
+			children = (
+				0042B01C153A6187001DBD51 /* Resources */,
+				0042AFEE153A5E51001DBD51 /* Frisbee */,
+				0042B00B153A5E52001DBD51 /* FrisbeeTests */,
+				0042AFE7153A5E51001DBD51 /* Frameworks */,
+				0042AFE5153A5E51001DBD51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0042AFE5153A5E51001DBD51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0042AFE4153A5E51001DBD51 /* Frisbee.app */,
+				0042B005153A5E52001DBD51 /* FrisbeeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0042AFE7153A5E51001DBD51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0042AFE8153A5E51001DBD51 /* Cocoa.framework */,
+				0042B006153A5E52001DBD51 /* SenTestingKit.framework */,
+				0042AFEA153A5E51001DBD51 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0042AFEA153A5E51001DBD51 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0042AFEB153A5E51001DBD51 /* AppKit.framework */,
+				0042AFEC153A5E51001DBD51 /* CoreData.framework */,
+				0042AFED153A5E51001DBD51 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0042AFEE153A5E51001DBD51 /* Frisbee */ = {
+			isa = PBXGroup;
+			children = (
+				0042AFFA153A5E51001DBD51 /* AppDelegate.h */,
+				0042AFFB153A5E51001DBD51 /* AppDelegate.m */,
+				0042AFFD153A5E52001DBD51 /* MainMenu.xib */,
+				0042AFEF153A5E51001DBD51 /* Supporting Files */,
+			);
+			path = Frisbee;
+			sourceTree = "<group>";
+		};
+		0042AFEF153A5E51001DBD51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0042AFF0153A5E51001DBD51 /* Frisbee-Info.plist */,
+				0042AFF1153A5E51001DBD51 /* InfoPlist.strings */,
+				0042AFF4153A5E51001DBD51 /* main.m */,
+				0042AFF6153A5E51001DBD51 /* Frisbee-Prefix.pch */,
+				0042AFF7153A5E51001DBD51 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0042B00B153A5E52001DBD51 /* FrisbeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0042B011153A5E52001DBD51 /* FrisbeeTests.h */,
+				0042B012153A5E52001DBD51 /* FrisbeeTests.m */,
+				0042B00C153A5E52001DBD51 /* Supporting Files */,
+			);
+			path = FrisbeeTests;
+			sourceTree = "<group>";
+		};
+		0042B00C153A5E52001DBD51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0042B00D153A5E52001DBD51 /* FrisbeeTests-Info.plist */,
+				0042B00E153A5E52001DBD51 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0042B01C153A6187001DBD51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0042B01D153A61AA001DBD51 /* growlTunes.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0042AFE3153A5E51001DBD51 /* Frisbee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0042B016153A5E52001DBD51 /* Build configuration list for PBXNativeTarget "Frisbee" */;
+			buildPhases = (
+				0042AFE0153A5E51001DBD51 /* Sources */,
+				0042AFE1153A5E51001DBD51 /* Frameworks */,
+				0042AFE2153A5E51001DBD51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Frisbee;
+			productName = Frisbee;
+			productReference = 0042AFE4153A5E51001DBD51 /* Frisbee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0042B004153A5E52001DBD51 /* FrisbeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0042B019153A5E52001DBD51 /* Build configuration list for PBXNativeTarget "FrisbeeTests" */;
+			buildPhases = (
+				0042B000153A5E52001DBD51 /* Sources */,
+				0042B001153A5E52001DBD51 /* Frameworks */,
+				0042B002153A5E52001DBD51 /* Resources */,
+				0042B003153A5E52001DBD51 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0042B00A153A5E52001DBD51 /* PBXTargetDependency */,
+			);
+			name = FrisbeeTests;
+			productName = FrisbeeTests;
+			productReference = 0042B005153A5E52001DBD51 /* FrisbeeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0042AFDB153A5E51001DBD51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "The Greatest Company";
+			};
+			buildConfigurationList = 0042AFDE153A5E51001DBD51 /* Build configuration list for PBXProject "Frisbee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0042AFD9153A5E51001DBD51;
+			productRefGroup = 0042AFE5153A5E51001DBD51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0042AFE3153A5E51001DBD51 /* Frisbee */,
+				0042B004153A5E52001DBD51 /* FrisbeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0042AFE2153A5E51001DBD51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042AFF3153A5E51001DBD51 /* InfoPlist.strings in Resources */,
+				0042AFF9153A5E51001DBD51 /* Credits.rtf in Resources */,
+				0042AFFF153A5E52001DBD51 /* MainMenu.xib in Resources */,
+				0042B01E153A61AA001DBD51 /* growlTunes.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B002153A5E52001DBD51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B010153A5E52001DBD51 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0042B003153A5E52001DBD51 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0042AFE0153A5E51001DBD51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042AFF5153A5E51001DBD51 /* main.m in Sources */,
+				0042AFFC153A5E51001DBD51 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B000153A5E52001DBD51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B013153A5E52001DBD51 /* FrisbeeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0042B00A153A5E52001DBD51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0042AFE3153A5E51001DBD51 /* Frisbee */;
+			targetProxy = 0042B009153A5E52001DBD51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0042AFF1153A5E51001DBD51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042AFF2153A5E51001DBD51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0042AFF7153A5E51001DBD51 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042AFF8153A5E51001DBD51 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0042AFFD153A5E52001DBD51 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042AFFE153A5E52001DBD51 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0042B00E153A5E52001DBD51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042B00F153A5E52001DBD51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0042B014153A5E52001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0042B015153A5E52001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0042B017153A5E52001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frisbee/Frisbee-Prefix.pch";
+				INFOPLIST_FILE = "Frisbee/Frisbee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0042B018153A5E52001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frisbee/Frisbee-Prefix.pch";
+				INFOPLIST_FILE = "Frisbee/Frisbee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0042B01A153A5E52001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Frisbee.app/Contents/MacOS/Frisbee";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frisbee/Frisbee-Prefix.pch";
+				INFOPLIST_FILE = "FrisbeeTests/FrisbeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0042B01B153A5E52001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Frisbee.app/Contents/MacOS/Frisbee";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frisbee/Frisbee-Prefix.pch";
+				INFOPLIST_FILE = "FrisbeeTests/FrisbeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0042AFDE153A5E51001DBD51 /* Build configuration list for PBXProject "Frisbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B014153A5E52001DBD51 /* Debug */,
+				0042B015153A5E52001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0042B016153A5E52001DBD51 /* Build configuration list for PBXNativeTarget "Frisbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B017153A5E52001DBD51 /* Debug */,
+				0042B018153A5E52001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0042B019153A5E52001DBD51 /* Build configuration list for PBXNativeTarget "FrisbeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B01A153A5E52001DBD51 /* Debug */,
+				0042B01B153A5E52001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0042AFDB153A5E51001DBD51 /* Project object */;
+}
