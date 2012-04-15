@@ -19,31 +19,34 @@ $(document).ready ->
         
     # TODO: Handle denials, in the case of denial, just fail
     
-socket.on 'frisbee', (data) ->
-    console.log data
+handleData = (data) ->
     {type, content} = data
+
+    switch type
+        when "url"
+            a = $("<iframe src='#{content}'></iframe>")
+            a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
+        when "youtube"
+            time = if data.time then data.time else ""
+            a = $("<iframe src='http://www.youtube.com/embed/#{content}?autoplay=1\#t=#{time}' frameborder='0' autoplay=true allowfullscreen></iframe>")
+            a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
+
+        when "image"
+            $("body").append $("<img src='#{content}'></img>")
+        when "spotify"
+            document.location = "spotify:track:#{content}"
+        else
+            alert("Unknown")
+            return
+    a.hide()
+    a.appendTo('.content')
+    a.fadeIn('slow')
+
+socket.on 'frisbee', (data) ->
     console.log data
 
     throwFrisbee ->
-        switch type
-            when "url"
-                a = $("<iframe src='#{content}'></iframe>")
-                a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
-            when "youtube"
-                a = $("<iframe src='http://www.youtube.com/embed/#{content}?autoplay=1' frameborder='0' autoplay=true allowfullscreen></iframe>")
-                a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
-
-            when "image"
-                $("body").append $("<img src='#{content}'></img>")
-            when "spotify"
-                document.location = "spotify:track:#{content}"
-            else
-                alert("Unknown")
-                return
-        a.hide()
-        a.appendTo('.content')
-        a.fadeIn('slow')
-
+        handleData data
 
 
 throwFrisbee = window.throwFrisbee = (cb) ->
@@ -72,7 +75,9 @@ throwFrisbee = window.throwFrisbee = (cb) ->
         frisbee.animate {left: percentOfWidth(-25), bottom: percentOfHeight(-25)}, 1250, 'easeInOutQuad', ->
                 cb()
 
-    if oldFrisbee.hasClass('frisbeeContent')
+    if oldFrisbee.length is 0
+        animateFrisbee()
+    else if oldFrisbee.hasClass('frisbeeContent')
         oldFrisbee.fadeOut animateFrisbee
     else
         oldFrisbee.animate left: -300, 1000, 'easeInOutQuad', animateFrisbee
@@ -114,6 +119,17 @@ createCloud = ->
     cloud.animate {left: -250}, 60000, 'linear', ->
         cloud.remove()
 
+performYTSearch = (s, cb) ->
+    $.ajax
+      dataType: 'jsonp'
+      type: 'GET'
+      url: "http://gdata.youtube.com/feeds/api/videos?q=#{ encodeURIComponent(s) }" +
+           "&format=5&v=2&alt=jsonc" + # Force embeddable vids (format=5)
+           "&max-results=1"
+      success: (responseData, textStatus, XMLHttpRequest) =>
+          if videoId = responseData?.data?.items?[0].id
+              cb (videoId)
+
 startAnimation = ->
     createCloud()
     window.setInterval ->
@@ -136,4 +152,26 @@ startAnimation = ->
         , 200
 
 $ ->
-    startAnimation()
+    search = window.location.search
+    if search
+        YT_SEARCH = ///youtube=([^&]*)///
+        result = YT_SEARCH.exec search
+        s = result[1]
+        s = s.replace(',', ' ')
+
+        YT_TIME = ///time=([^&]*)///
+        result = YT_TIME.exec search
+        time = result[1]
+
+        console.log 'hey'
+
+        performYTSearch s, (videoId) ->
+            throwFrisbee ->
+                handleData type: 'youtube', content: videoId, time: time
+    else
+        startAnimation()
+
+
+
+
+
