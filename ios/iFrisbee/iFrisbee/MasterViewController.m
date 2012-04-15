@@ -85,12 +85,13 @@
     if (!conn) {
         NSData* data = [[[[[title stringByAppendingString:@" - "] stringByAppendingString:artist] stringByAppendingString:@"|"] stringByAppendingString:time] dataUsingEncoding:NSUTF8StringEncoding];
         ssize_t datasend = send(sockfd, [data bytes], [data length], 0);
-        [[MPMusicPlayerController iPodMusicPlayer] pause];
         close(sockfd);
     }else{
         NSLog(@"Did not connect");
     }
     
+    sleep(1);
+    [[MPMusicPlayerController iPodMusicPlayer] pause];
     
 }
 

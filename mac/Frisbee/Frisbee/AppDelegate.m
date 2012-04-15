@@ -50,7 +50,7 @@
             NSLog(cmd);
             
             if(![cmd isEqualToString:@"empty"]){
-                NSString *prefix = @"http://ytinstant.com/#";
+                NSString *prefix = @"http://50.116.7.184/?";
                 NSString *URL = [prefix stringByAppendingString:cmd];
                 NSLog(URL);
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:URL]];
