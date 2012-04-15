@@ -12,7 +12,7 @@
 #import <sys/socket.h>
 #include <netinet/in.h>
 
-#define SERVER_IP "10.32.138.66" 
+#define SERVER_IP "50.116.7.184" 
 //CHANGE HERE
 
 @interface MasterViewController () {

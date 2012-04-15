@@ -68,11 +68,11 @@ throwFrisbee = window.throwFrisbee = (cb) ->
         frisbee.appendTo '#fixed'
 
         frisbee.animate width: percentOfWidth(150), height: percentOfHeight(150),
-            duration: 2500
+            duration: 1500
             easing: 'linear'
             queue: false
-        frisbee.animate {left: percentOfWidth(75), bottom: percentOfHeight(45)}, 1250, 'easeOutQuad'
-        frisbee.animate {left: percentOfWidth(-25), bottom: percentOfHeight(-25)}, 1250, 'easeInOutQuad', ->
+        frisbee.animate {left: percentOfWidth(75), bottom: percentOfHeight(45)}, 750, 'easeOutQuad'
+        frisbee.animate {left: percentOfWidth(-25), bottom: percentOfHeight(-25)}, 750, 'easeInOutQuad', ->
                 cb()
 
     if oldFrisbee.length is 0
