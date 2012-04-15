@@ -17,6 +17,7 @@ LOCAL = off
 PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
 TCP_PORT = 5002
+IPHONE_TCP_PORT = 5003
 
 # App
 # ===
@@ -90,7 +91,7 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
 # TCP server that the Mac app polls to find out if it has received any messages
 # We have to kill dead connections, etc.
 
-dummy = 0
+dummy = ""
 
 # TCP Text Protocol
 # poll -> empty | w:[url] | m:[song] 
@@ -99,9 +100,9 @@ net.createServer( (socket) ->
     socket.on 'data', (data) ->
         msg += data.toString 'ascii'
         console.log msg
-        if msg is 'poll' and dummy is 0
-            dummy = 1
-            socket.write 'frisbee'
+        if msg is 'poll' and dummy isnt ""
+            socket.write dummy
+            dummy = ""
         else
             socket.write 'empty'
         
@@ -109,4 +110,19 @@ net.createServer( (socket) ->
         
 ).listen TCP_PORT
 
-log "Running TCP server on #{TCP_PORT}"
+log "Running Mac TCP server on #{TCP_PORT}"
+
+# iPhone TCP server
+
+net.createServer( (socket) ->
+    msg = ""
+    socket.on 'data', (data) ->
+        msg += data.toString 'ascii'
+        dummy = msg
+        console.log msg
+        
+    socket.on 'end', () ->
+        
+).listen IPHONE_TCP_PORT
+
+log "Running iPhone TCP server on #{IPHONE_TCP_PORT}"

@@ -47,8 +47,8 @@
            
             NSString *cmd = [NSString stringWithUTF8String: buf];
             NSLog(cmd);
-            if([cmd isEqualToString:@"frisbee"]){
-                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.google.com/"]];
+            if(![cmd isEqualToString:@"empty"]){
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://ytinstant.com/#BeMyThrill"]];
             }
             
             close(sockfd);

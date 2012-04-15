@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0042B08B153A9D00001DBD51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B08A153A9D00001DBD51 /* UIKit.framework */; };
+		0042B08D153A9D00001DBD51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B08C153A9D00001DBD51 /* Foundation.framework */; };
+		0042B08F153A9D00001DBD51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B08E153A9D00001DBD51 /* CoreGraphics.framework */; };
+		0042B095153A9D00001DBD51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0042B093153A9D00001DBD51 /* InfoPlist.strings */; };
+		0042B097153A9D00001DBD51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B096153A9D00001DBD51 /* main.m */; };
+		0042B09B153A9D00001DBD51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B09A153A9D00001DBD51 /* AppDelegate.m */; };
+		0042B09E153A9D00001DBD51 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0042B09C153A9D00001DBD51 /* MainStoryboard_iPhone.storyboard */; };
+		0042B0A1153A9D00001DBD51 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0042B09F153A9D00001DBD51 /* MainStoryboard_iPad.storyboard */; };
+		0042B0A4153A9D00001DBD51 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B0A3153A9D00001DBD51 /* MasterViewController.m */; };
+		0042B0A7153A9D00001DBD51 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B0A6153A9D00001DBD51 /* DetailViewController.m */; };
+		0042B0AF153A9D01001DBD51 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B0AE153A9D01001DBD51 /* SenTestingKit.framework */; };
+		0042B0B0153A9D01001DBD51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B08A153A9D00001DBD51 /* UIKit.framework */; };
+		0042B0B1153A9D01001DBD51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B08C153A9D00001DBD51 /* Foundation.framework */; };
+		0042B0B9153A9D01001DBD51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0042B0B7153A9D01001DBD51 /* InfoPlist.strings */; };
+		0042B0BC153A9D01001DBD51 /* iFrisbeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0042B0BB153A9D01001DBD51 /* iFrisbeeTests.m */; };
+		0042B0C6153A9E25001DBD51 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042B0C5153A9E25001DBD51 /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0042B0B2153A9D01001DBD51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0042B07D153A9CFF001DBD51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0042B085153A9D00001DBD51;
+			remoteInfo = iFrisbee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0042B086153A9D00001DBD51 /* iFrisbee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFrisbee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0042B08A153A9D00001DBD51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0042B08C153A9D00001DBD51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0042B08E153A9D00001DBD51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0042B092153A9D00001DBD51 /* iFrisbee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFrisbee-Info.plist"; sourceTree = "<group>"; };
+		0042B094153A9D00001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0042B096153A9D00001DBD51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0042B098153A9D00001DBD51 /* iFrisbee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iFrisbee-Prefix.pch"; sourceTree = "<group>"; };
+		0042B099153A9D00001DBD51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0042B09A153A9D00001DBD51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0042B09D153A9D00001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		0042B0A0153A9D00001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		0042B0A2153A9D00001DBD51 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		0042B0A3153A9D00001DBD51 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		0042B0A5153A9D00001DBD51 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0042B0A6153A9D00001DBD51 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0042B0AD153A9D01001DBD51 /* iFrisbeeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFrisbeeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0042B0AE153A9D01001DBD51 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0042B0B6153A9D01001DBD51 /* iFrisbeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFrisbeeTests-Info.plist"; sourceTree = "<group>"; };
+		0042B0B8153A9D01001DBD51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0042B0BA153A9D01001DBD51 /* iFrisbeeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iFrisbeeTests.h; sourceTree = "<group>"; };
+		0042B0BB153A9D01001DBD51 /* iFrisbeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iFrisbeeTests.m; sourceTree = "<group>"; };
+		0042B0C5153A9E25001DBD51 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0042B083153A9D00001DBD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B0C6153A9E25001DBD51 /* MediaPlayer.framework in Frameworks */,
+				0042B08B153A9D00001DBD51 /* UIKit.framework in Frameworks */,
+				0042B08D153A9D00001DBD51 /* Foundation.framework in Frameworks */,
+				0042B08F153A9D00001DBD51 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B0A9153A9D01001DBD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B0AF153A9D01001DBD51 /* SenTestingKit.framework in Frameworks */,
+				0042B0B0153A9D01001DBD51 /* UIKit.framework in Frameworks */,
+				0042B0B1153A9D01001DBD51 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0042B07B153A9CFF001DBD51 = {
+			isa = PBXGroup;
+			children = (
+				0042B0C5153A9E25001DBD51 /* MediaPlayer.framework */,
+				0042B090153A9D00001DBD51 /* iFrisbee */,
+				0042B0B4153A9D01001DBD51 /* iFrisbeeTests */,
+				0042B089153A9D00001DBD51 /* Frameworks */,
+				0042B087153A9D00001DBD51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0042B087153A9D00001DBD51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0042B086153A9D00001DBD51 /* iFrisbee.app */,
+				0042B0AD153A9D01001DBD51 /* iFrisbeeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0042B089153A9D00001DBD51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0042B08A153A9D00001DBD51 /* UIKit.framework */,
+				0042B08C153A9D00001DBD51 /* Foundation.framework */,
+				0042B08E153A9D00001DBD51 /* CoreGraphics.framework */,
+				0042B0AE153A9D01001DBD51 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0042B090153A9D00001DBD51 /* iFrisbee */ = {
+			isa = PBXGroup;
+			children = (
+				0042B099153A9D00001DBD51 /* AppDelegate.h */,
+				0042B09A153A9D00001DBD51 /* AppDelegate.m */,
+				0042B09C153A9D00001DBD51 /* MainStoryboard_iPhone.storyboard */,
+				0042B09F153A9D00001DBD51 /* MainStoryboard_iPad.storyboard */,
+				0042B0A2153A9D00001DBD51 /* MasterViewController.h */,
+				0042B0A3153A9D00001DBD51 /* MasterViewController.m */,
+				0042B0A5153A9D00001DBD51 /* DetailViewController.h */,
+				0042B0A6153A9D00001DBD51 /* DetailViewController.m */,
+				0042B091153A9D00001DBD51 /* Supporting Files */,
+			);
+			path = iFrisbee;
+			sourceTree = "<group>";
+		};
+		0042B091153A9D00001DBD51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0042B092153A9D00001DBD51 /* iFrisbee-Info.plist */,
+				0042B093153A9D00001DBD51 /* InfoPlist.strings */,
+				0042B096153A9D00001DBD51 /* main.m */,
+				0042B098153A9D00001DBD51 /* iFrisbee-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0042B0B4153A9D01001DBD51 /* iFrisbeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0042B0BA153A9D01001DBD51 /* iFrisbeeTests.h */,
+				0042B0BB153A9D01001DBD51 /* iFrisbeeTests.m */,
+				0042B0B5153A9D01001DBD51 /* Supporting Files */,
+			);
+			path = iFrisbeeTests;
+			sourceTree = "<group>";
+		};
+		0042B0B5153A9D01001DBD51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0042B0B6153A9D01001DBD51 /* iFrisbeeTests-Info.plist */,
+				0042B0B7153A9D01001DBD51 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0042B085153A9D00001DBD51 /* iFrisbee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0042B0BF153A9D01001DBD51 /* Build configuration list for PBXNativeTarget "iFrisbee" */;
+			buildPhases = (
+				0042B082153A9D00001DBD51 /* Sources */,
+				0042B083153A9D00001DBD51 /* Frameworks */,
+				0042B084153A9D00001DBD51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iFrisbee;
+			productName = iFrisbee;
+			productReference = 0042B086153A9D00001DBD51 /* iFrisbee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0042B0AC153A9D01001DBD51 /* iFrisbeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0042B0C2153A9D01001DBD51 /* Build configuration list for PBXNativeTarget "iFrisbeeTests" */;
+			buildPhases = (
+				0042B0A8153A9D01001DBD51 /* Sources */,
+				0042B0A9153A9D01001DBD51 /* Frameworks */,
+				0042B0AA153A9D01001DBD51 /* Resources */,
+				0042B0AB153A9D01001DBD51 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0042B0B3153A9D01001DBD51 /* PBXTargetDependency */,
+			);
+			name = iFrisbeeTests;
+			productName = iFrisbeeTests;
+			productReference = 0042B0AD153A9D01001DBD51 /* iFrisbeeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0042B07D153A9CFF001DBD51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "The Greatest Company";
+			};
+			buildConfigurationList = 0042B080153A9CFF001DBD51 /* Build configuration list for PBXProject "iFrisbee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0042B07B153A9CFF001DBD51;
+			productRefGroup = 0042B087153A9D00001DBD51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0042B085153A9D00001DBD51 /* iFrisbee */,
+				0042B0AC153A9D01001DBD51 /* iFrisbeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0042B084153A9D00001DBD51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B095153A9D00001DBD51 /* InfoPlist.strings in Resources */,
+				0042B09E153A9D00001DBD51 /* MainStoryboard_iPhone.storyboard in Resources */,
+				0042B0A1153A9D00001DBD51 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B0AA153A9D01001DBD51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B0B9153A9D01001DBD51 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0042B0AB153A9D01001DBD51 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0042B082153A9D00001DBD51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B097153A9D00001DBD51 /* main.m in Sources */,
+				0042B09B153A9D00001DBD51 /* AppDelegate.m in Sources */,
+				0042B0A4153A9D00001DBD51 /* MasterViewController.m in Sources */,
+				0042B0A7153A9D00001DBD51 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0042B0A8153A9D01001DBD51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0042B0BC153A9D01001DBD51 /* iFrisbeeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0042B0B3153A9D01001DBD51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0042B085153A9D00001DBD51 /* iFrisbee */;
+			targetProxy = 0042B0B2153A9D01001DBD51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0042B093153A9D00001DBD51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042B094153A9D00001DBD51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0042B09C153A9D00001DBD51 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042B09D153A9D00001DBD51 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		0042B09F153A9D00001DBD51 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042B0A0153A9D00001DBD51 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		0042B0B7153A9D01001DBD51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0042B0B8153A9D01001DBD51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0042B0BD153A9D01001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0042B0BE153A9D01001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0042B0C0153A9D01001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFrisbee/iFrisbee-Prefix.pch";
+				INFOPLIST_FILE = "iFrisbee/iFrisbee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0042B0C1153A9D01001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFrisbee/iFrisbee-Prefix.pch";
+				INFOPLIST_FILE = "iFrisbee/iFrisbee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0042B0C3153A9D01001DBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iFrisbee.app/iFrisbee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFrisbee/iFrisbee-Prefix.pch";
+				INFOPLIST_FILE = "iFrisbeeTests/iFrisbeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0042B0C4153A9D01001DBD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iFrisbee.app/iFrisbee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFrisbee/iFrisbee-Prefix.pch";
+				INFOPLIST_FILE = "iFrisbeeTests/iFrisbeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0042B080153A9CFF001DBD51 /* Build configuration list for PBXProject "iFrisbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B0BD153A9D01001DBD51 /* Debug */,
+				0042B0BE153A9D01001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0042B0BF153A9D01001DBD51 /* Build configuration list for PBXNativeTarget "iFrisbee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B0C0153A9D01001DBD51 /* Debug */,
+				0042B0C1153A9D01001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0042B0C2153A9D01001DBD51 /* Build configuration list for PBXNativeTarget "iFrisbeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0042B0C3153A9D01001DBD51 /* Debug */,
+				0042B0C4153A9D01001DBD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0042B07D153A9CFF001DBD51 /* Project object */;
+}
