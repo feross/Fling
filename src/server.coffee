@@ -28,16 +28,17 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
     io = sio.listen app.app
     io.configure () ->
       io.set 'transports', ['websocket']
-      io.disable 'log'
+      io.enable 'log'
       
     io.sockets.on 'connection', (socket) ->
                 
+        log 'new connection!'
         socket.on 'id', (msg) ->
             socket.set('info', msg)
             socket.get 'info', (err, info) ->
                 log(inspect(info))
         
-        socket.on 'frisbee', (data) ->
+        socket.on 'frisbee', (data, cb) ->
             log 'frisbee!!!'
 
             for client in io.sockets.clients()
@@ -49,6 +50,9 @@ solid {port: PORT, cwd: "#{__dirname}/.."}, (app) ->
                 log "Sending to #{name}..."
                                 
                 client.emit 'frisbee', data
+
+                cb()
+                
                 # Messages for different kinds of content
                 # TODO: Convert music to a spotify thing
                 # {type: 'spotify', content: '7My5AMVGC5KUYgsxZVOQUI'}

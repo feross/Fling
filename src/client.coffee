@@ -29,6 +29,7 @@ socket.on 'frisbee', (data) ->
                 iframe.appendTo('.content')
                 iframe.fadeIn('slow')
             when "youtube"
+                
                 $("body").append $("""<iframe width='420' height='315'
                                       src='http://www.youtube.com/embed/#{content}'
                                       frameborder='0' autoplay=true allowfullscreen></iframe>""")
