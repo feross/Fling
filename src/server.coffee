@@ -7,7 +7,7 @@ dir = inspect
 # Configuration
 # =============
 
-LOCAL = on 
+LOCAL = on
 PORT = if LOCAL then 5000 else 80
 SIO_PORT = 5001
 

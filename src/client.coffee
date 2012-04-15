@@ -1,4 +1,5 @@
-SERVER = "http://localhost" # "http://74.207.248.42"
+LOCAL = on
+SERVER = if LOCAL then "http://localhost" else "http://50.116.7.184"
 
 window.socket = socket = io.connect SERVER
 
@@ -21,5 +22,9 @@ socket.on 'frisbee', (data) ->
             $("body").append $("""<iframe width='420' height='315'
                                   src='http://www.youtube.com/embed/#{content}'
                                   frameborder='0' autoplay=true allowfullscreen></iframe>""")
+        when "image"
+        
+        when "spotify"
+        
         else
             alert("Unknown")
