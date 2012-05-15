@@ -28,7 +28,7 @@ handleData = (data) ->
             a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
         when "youtube"
             time = if data.time then data.time else ""
-            a = $("<iframe src='http://www.youtube.com/embed/#{content}?autoplay=1\#t=#{time}' frameborder='0' autoplay=true allowfullscreen></iframe>")
+            a = $("<iframe src='http://www.youtube.com/embed/#{content}?autoplay=1\#t=#{time}' style='background-color: #fff' frameborder='0' autoplay=true allowfullscreen></iframe>")
             a.css width: percentOfWidth(100) - 100, height: percentOfHeight(100) - 100
 
         when "image"
