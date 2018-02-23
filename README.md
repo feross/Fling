@@ -1,6 +1,8 @@
 Fling Readme
 ============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/feross/Fling.svg)](https://greenkeeper.io/)
+
 Developed by [Abi Raja](http://abi.sh), [Feross Aboukhadijeh](http://feross.org), and Alex Hicks-Nelson for [Stanford ACM](http://stanfordacm.com) Big Hack 2012. We won second place.
 
 Fling your content around!
