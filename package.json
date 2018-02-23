@@ -12,7 +12,7 @@
       "socket.io" : ">0.8.x"
   },
   "devDependencies": {
-    "coffee-script": "1.1.x"
+    "coffee-script": "~1.12.7"
   },
   "scripts": {
     "test": "mocha"
